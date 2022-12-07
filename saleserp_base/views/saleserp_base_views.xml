@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Top menu Saleserp item -->
+        <menuitem name="SalesERP" id="menu_saleserp_root"
+                  web_icon="saleserp_base,static/description/icon.png"
+                  sequence="300"/>
+    </data>
+</odoo>

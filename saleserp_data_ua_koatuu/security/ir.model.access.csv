@@ -1,0 +1,5 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+"access_saleserp_json_import_base_user","wizard.saleserp.json.import.base.user","model_saleserp_json_import","base.group_user",1,1,1,1
+"access_saleserp_json_import_lines_base_user","wizard.saleserp.json.import.lines.base.user","model_saleserp_json_import_lines","base.group_user",1,1,1,1
+"access_saleserp_cities_hierarchy_base_user","saleserp.cities.hierarchy.base.user","model_saleserp_cities_hierarchy","base.group_user",1,1,1,1
+

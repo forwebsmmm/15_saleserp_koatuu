@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="saleserp_json_import_form" model="ir.ui.view">
+        <field name="name">saleserp.json.import.form</field>
+        <field name="model">saleserp.json.import</field>
+        <field name="arch" type="xml">
+            <form string="KOATUU JSON Import">
+                <group>
+                    <field name="json_file" filename="json_filename"/>
+                    <field name="json_filename" invisible="1"/>
+                </group>
+                <field name="line_ids" nolabel="1">
+                    <tree editable="top">
+                        <field name="first_lvl"/>
+                        <field name="second_lvl"/>
+                        <field name="third_lvl"/>
+                        <field name="fourth_lvl"/>
+                        <field name="category"/>
+                        <field name="object_name"/>
+                    </tree>
+                </field>
+                <footer>
+                    <button
+                            name="json_import_button"
+                            type="object"
+                            class="oe_highlight"
+                            string="Import"
+                    />
+                    <button special="cancel" string="Cancel" class="oe_link"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="json_import_button_action" model="ir.actions.act_window">
+        <field name="name">Json Import</field>
+        <field name="res_model">saleserp.json.import</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem
+            id="koatuu_menu"
+            name="KOATUU"
+            parent="saleserp_base.menu_saleserp_root"
+            sequence="1"
+            groups="base.group_user"
+    />
+</odoo>

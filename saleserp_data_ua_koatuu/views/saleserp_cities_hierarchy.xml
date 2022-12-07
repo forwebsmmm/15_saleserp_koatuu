@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- saleserp.cities.hierarchy search view -->
+        <record model="ir.ui.view" id="saleserp_cities_hierarchy_search">
+            <field name="name">saleserp.cities.hierarchy.search</field>
+            <field name="model">saleserp.cities.hierarchy</field>
+            <field name="arch" type="xml">
+                <search string="Cities hierarchy">
+                    <field name="name" string="Name"/>
+                    <field name="code" string="Code"/>
+                    <searchpanel view_types="tree">
+                        <field name="parent_id" string="Levels" icon="fa-folder" enable_counters="1" limit="0"/>
+                    </searchpanel>
+                </search>
+            </field>
+        </record>
+
+        <!-- saleserp.cities.hierarchy tree view -->
+        <record model="ir.ui.view" id="saleserp_cities_hierarchy_tree">
+            <field name="name">saleserp_cities_hierarchy_tree</field>
+            <field name="model">saleserp.cities.hierarchy</field>
+            <field name="arch" type="xml">
+                <tree string="Cities hierarchy" create="false" delete="false" edit="false">
+                    <field name="code"/>
+                    <field name="category"/>
+                    <field name="name" string="Name"/>
+                    <field name="parent_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- action opening views on saleserp.cities.hierarchy model -->
+        <record model="ir.actions.act_window" id="saleserp_cities_hierarchy_action_window">
+            <field name="name">Classifier</field>
+            <field name="res_model">saleserp.cities.hierarchy</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="saleserp_cities_hierarchy_search"/>
+        </record>
+
+        <!-- Cities hierarchy menu item -->
+        <menuitem name="Classifier" id="menu_saleserp_cities_hierarchy"
+                  parent="koatuu_menu"
+                  sequence="1"
+                  action="saleserp_cities_hierarchy_action_window"
+                  groups="saleserp_base.group_saleserp_user"/>
+    </data>
+</odoo>

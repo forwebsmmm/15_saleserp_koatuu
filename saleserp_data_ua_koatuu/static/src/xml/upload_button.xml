@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xml:space="preserve">
+    <t t-extend="ListView.buttons">
+        <t t-jquery="button.o_list_export_xlsx" t-operation="before">
+            <button t-if="widget.modelName == 'saleserp.cities.hierarchy'"
+                    class="btn btn-primary oe_upgrade_action_button"
+                    type="button" accesskey="f">Upload</button>
+        </t>
+    </t>
+</template>
